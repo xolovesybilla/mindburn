@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Burn - Rekindle Your Spark</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Font Import & Reset */
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Color Palette */
+            --sky-blue: #A0D2F7;
+            --sky-blue-dark: #87CEEB;
+            --pastel-green: #C7E9C0;
+            --pastel-green-dark: #A7D8A2;
+            --soft-peach: #FFD8BE;
+            --soft-lavender: #E6E6FA;
+            --pastel-yellow: #FFF9C4;
+            --warm-gray: #F5F0EB;
+            --warm-nude: #F8F0E3;
+            --text-dark: #5A5A5A;
+            --text-light: #7A7A7A;
+            
+            /* Fonts */
+            --font-handwriting: 'Dancing Script', cursive;
+            --font-body: 'Quicksand', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background-color: #fefefe;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--sky-blue) 0%, var(--soft-lavender) 100%);
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 28px;
+            color: var(--pastel-green-dark);
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+        
+        .logo-text {
+            font-family: var(--font-handwriting);
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+        }
+        
+        .logo-tagline {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: -5px;
+            font-weight: 500;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+        
+        nav a:hover {
+            color: var(--pastel-green-dark);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .cta-button {
+            background-color: var(--pastel-green);
+            color: var(--text-dark);
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(167, 216, 162, 0.3);
+        }
+        
+        .cta-button:hover {
+            background-color: var(--pastel-green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(167, 216, 162, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #ffffff 0%, var(--warm-nude) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        
+        .hero-text {
+            flex: 1;
+        }
+        
+        .hero-title {
+            font-family: var(--font-handwriting);
+            font-size: 48px;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .secondary-button {
+            background-color: transparent;
+            color: var(--text-dark);
+            border: 2px solid var(--sky-blue);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .secondary-button:hover {
+            background-color: rgba(160, 210, 247, 0.1);
+        }
+        
+        .hero-visual {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+        
+        /* Mascot Animation */
+        .mascot-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+        
+        .mascot {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 50px;
+            left: 50px;
+            z-index: 2;
+        }
+        
+        .phoenix-body {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-color: var(--soft-peach);
+            border-radius: 50% 50% 40% 40%;
+            top: 40px;
+            left: 40px;
+            box-shadow: 0 5px 15px rgba(255, 216, 190, 0.4);
+        }
+        
+        .phoenix-head {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: var(--pastel-yellow);
+            border-radius: 50%;
+            top: 20px;
+            left: 80px;
+            box-shadow: 0 3px 8px rgba(255, 249, 196, 0.3);
+        }
+        
+        .phoenix-eye {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: var(--text-dark);
+            border-radius: 50%;
+            top: 25px;
+            left: 100px;
+        }
+        
+        .phoenix-wing {
+            position: absolute;
+            width: 80px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--sky-blue) 0%, var(--soft-lavender) 100%);
+            border-radius: 40% 60% 50% 50%;
+            top: 80px;
+        }
+        
+        .wing-left {
+            left: 10px;
+            transform: rotate(-20deg);
+            animation: wingFlapLeft 3s infinite ease-in-out;
+        }
+        
+        .wing-right {
+            right: 10px;
+            transform: rotate(20deg) scaleX(-1);
+            animation: wingFlapRight 3s infinite ease-in-out;
+        }
+        
+        .phoenix-tail {
+            position: absolute;
+            width: 100px;
+            height: 60px;
+            background: linear-gradient(90deg, var(--pastel-green) 0%, var(--pastel-yellow) 100%);
+            border-radius: 50% 20% 50% 50%;
+            bottom: 30px;
+            left: 70px;
+            transform: rotate(-10deg);
+            animation: tailSway 4s infinite ease-in-out;
+        }
+        
+        .flame {
+            position: absolute;
+            width: 20px;
+            height: 40px;
+            background: linear-gradient(to top, var(--pastel-yellow) 0%, var(--soft-peach) 100%);
+            border-radius: 50% 50% 20% 20%;
+            bottom: 0;
+            left: 90px;
+            animation: flameFlicker 2s infinite alternate;
+            opacity: 0.8;
+        }
+        
+        .spark {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: var(--pastel-yellow);
+            border-radius: 50%;
+            opacity: 0;
+            box-shadow: 0 0 8px var(--pastel-yellow);
+        }
+        
+        /* Animations */
+        @keyframes wingFlapLeft {
+            0%, 100% { transform: rotate(-20deg); }
+            50% { transform: rotate(-10deg) translateY(-5px); }
+        }
+        
+        @keyframes wingFlapRight {
+            0%, 100% { transform: rotate(20deg) scaleX(-1); }
+            50% { transform: rotate(30deg) scaleX(-1) translateY(-5px); }
+        }
+        
+        @keyframes tailSway {
+            0%, 100% { transform: rotate(-10deg); }
+            50% { transform: rotate(-5deg); }
+        }
+        
+        @keyframes flameFlicker {
+            0% { 
+                transform: scaleY(1); 
+                opacity: 0.8;
+            }
+            100% { 
+                transform: scaleY(1.3); 
+                opacity: 1;
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        /* Assessment Section */
+        .assessment {
+            padding: 80px 0;
+            background-color: var(--warm-gray);
+            text-align: center;
+        }
+        
+        .section-title {
+            font-family: var(--font-handwriting);
+            font-size: 36px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .assessment-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(160, 210, 247, 0.2);
+        }
+        
+        .question {
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+        }
+        
+        .options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .option {
+            background-color: var(--warm-gray);
+            border: 2px solid transparent;
+            padding: 15px 25px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            flex: 1;
+            min-width: 150px;
+            max-width: 200px;
+        }
+        
+        .option:hover {
+            background-color: var(--pastel-green);
+            transform: translateY(-3px);
+        }
+        
+        .option.selected {
+            background-color: var(--sky-blue);
+            border-color: var(--sky-blue-dark);
+            box-shadow: 0 5px 15px rgba(160, 210, 247, 0.3);
+        }
+        
+        .progress-container {
+            margin-top: 30px;
+        }
+        
+        .progress-text {
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background-color: var(--warm-gray);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--sky-blue) 0%, var(--pastel-green) 100%);
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 10px;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background-color: var(--warm-nude);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            border-color: var(--sky-blue);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            color: var(--pastel-green-dark);
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+        
+        .feature-desc {
+            color: var(--text-light);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--pastel-green) 0%, var(--sky-blue) 100%);
+            padding: 50px 0 30px;
+            color: var(--text-dark);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-logo .logo-text {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .footer-desc {
+            margin-top: 10px;
+            max-width: 300px;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--text-dark);
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: white;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-dark);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .mascot-container {
+                margin-top: 30px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .section-title {
+                font-size: 30px;
+            }
+            
+            .question {
+                font-size: 18px;
+            }
+            
+            .feature-card {
+                padding: 20px;
+            }
+        }
+        
+        /* Breathing Animation Container */
+        .breathing-container {
+            margin-top: 40px;
+            background-color: rgba(160, 210, 247, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .breathing-circle {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, var(--pastel-green) 0%, var(--sky-blue) 100%);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: breathe 8s infinite ease-in-out;
+        }
+        
+        .breathing-text {
+            font-size: 24px;
+            font-family: var(--font-handwriting);
+            color: var(--text-dark);
+        }
+        
+        @keyframes breathe {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% { 
+                transform: scale(1.3);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">🔥</div>
+                <div>
+                    <div class="logo-text">Mind Burn</div>
+                    <div class="logo-tagline">Rekindle Your Spark</div>
+                </div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#assessment">Tes Burnout</a></li>
+                    <li><a href="#features">Fitur</a></li>
+                    <li><a href="#breathing">Relaksasi</a></li>
+                </ul>
+            </nav>
+            
+            <button class="cta-button">Mulai Sekarang</button>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Burnout Bukan Akhir, Mari Bangkit Kembali</h1>
+                <p class="hero-subtitle">Platform pertama di Indonesia yang khusus membantu kamu memahami, mengatasi, dan pulih dari burnout dengan pendekatan yang lembut dan personal.</p>
+                
+                <div class="hero-buttons">
+                    <button class="cta-button" id="startAssessment">Cek Level Burnout Saya</button>
+                    <button class="secondary-button">Pelajari Lebih Lanjut</button>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="mascot-container">
+                    <div class="mascot">
+                        <div class="phoenix-body"></div>
+                        <div class="phoenix-head"></div>
+                        <div class="phoenix-eye"></div>
+                        <div class="phoenix-wing wing-left"></div>
+                        <div class="phoenix-wing wing-right"></div>
+                        <div class="phoenix-tail"></div>
+                        <div class="flame"></div>
+                    </div>
+                    
+                    <!-- Animated sparks -->
+                    <div class="spark" id="spark1"></div>
+                    <div class="spark" id="spark2"></div>
+                    <div class="spark" id="spark3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Assessment Section -->
+    <section class="assessment" id="assessment">
+        <div class="container">
+            <h2 class="section-title">Seberapa dekat kamu dengan Burnout?</h2>
+            <p class="section-subtitle">Jawab 5 pertanyaan singkat ini untuk memahami kondisi mental dan emosional kamu saat ini.</p>
+            
+            <div class="assessment-card">
+                <div class="question" id="question">Pertanyaan 1/5: Bagaimana perasaan kamu tentang pekerjaan/tugas sehari-hari akhir-akhir ini?</div>
+                
+                <div class="options">
+                    <div class="option" data-value="1">Sangat bersemangat dan termotivasi</div>
+                    <div class="option" data-value="2">Biasa saja, seperti hari-hari lainnya</div>
+                    <div class="option" data-value="3">Mulai merasa lelah dan kurang bergairah</div>
+                    <div class="option" data-value="4">Sangat lelah dan hampir tak ada energi</div>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-text">Progress: <span id="progress-count">1</span>/5</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons" style="justify-content: center; margin-top: 20px;">
+                    <button class="secondary-button" id="prevBtn">Sebelumnya</button>
+                    <button class="cta-button" id="nextBtn">Selanjutnya</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Layanan Kami</h2>
+            <p class="section-subtitle">Kami menghadirkan solusi komprehensif untuk membantu kamu pulih dari burnout, langkah demi langkah.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Tes Burnout Personal</h3>
+                    <p class="feature-desc">Identifikasi tingkat burnout dengan assessment yang dikembangkan oleh psikolog profesional.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🧘‍♀️</div>
+                    <h3 class="feature-title">Latihan Relaksasi</h3>
+                    <p class="feature-desc">Teknik pernapasan, mindfulness, dan meditasi singkat untuk meredakan kecemasan.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3 class="feature-title">Journaling Terpandu</h3>
+                    <p class="feature-desc">Ekspresikan perasaan dengan panduan pertanyaan yang menenangkan.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">👩‍⚕️</div>
+                    <h3 class="feature-title">Konseling Online</h3>
+                    <p class="feature-desc">Konsultasi privat dengan psikolog berpengalaman khusus penanganan burnout.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Breathing Exercise Section -->
+    <section class="breathing-container" id="breathing">
+        <div class="container">
+            <h2 class="section-title">Ambil Napas Sejenak</h2>
+            <p class="section-subtitle">Coba latihan pernapasan sederhana ini untuk menenangkan pikiran.</p>
+            
+            <div class="breathing-circle">
+                <div class="breathing-text" id="breath-text">Tarik Napas</div>
+            </div>
+            
+            <p>Ikuti lingkaran: Tarik napas saat membesar, buang napas saat mengecil.</p>
+            <button class="secondary-button" style="margin-top: 15px;" id="breathToggle">Mulai/Pause</button>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-text">Mind Burn</div>
+                    <div class="logo-tagline">Rekindle Your Spark</div>
+                    <p class="footer-desc">Platform spesialis pemulihan burnout dengan pendekatan yang lembut dan personal.</p>
+                    
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Tautan Cepat</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#assessment">Tes Burnout</a></li>
+                        <li><a href="#features">Fitur</a></li>
+                        <li><a href="#breathing">Latihan Relaksasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Layanan</h3>
+                    <ul>
+                        <li><a href="#">Konseling Online</a></li>
+                        <li><a href="#">Program Pemulihan</a></li>
+                        <li><a href="#">Workshop</a></li>
+                        <li><a href="#">Untuk Perusahaan</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2023 Mind Burn. Semua hak dilindungi. Dibuat dengan ❤️ untuk Indonesia.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Assessment Quiz Logic
+        const questions = [
+            "Pertanyaan 1/5: Bagaimana perasaan kamu tentang pekerjaan/tugas sehari-hari akhir-akhir ini?",
+            "Pertanyaan 2/5: Seberapa sering kamu merasa kelelahan secara fisik atau emosional?",
+            "Pertanyaan 3/5: Bagaimana tingkat produktivitas kamu dibandingkan biasanya?",
+            "Pertanyaan 4/5: Seberapa mudah kamu merasa frustrasi atau tersinggung akhir-akhir ini?",
+            "Pertanyaan 5/5: Bagaimana kualitas tidur dan waktu istirahat kamu?"
+        ];
+        
+        let currentQuestion = 0;
+        let answers = [];
+        const progressFill = document.getElementById('progress-fill');
+        const progressCount = document.getElementById('progress-count');
+        const questionElement = document.getElementById('question');
+        const options = document.querySelectorAll('.option');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const startAssessmentBtn = document.getElementById('startAssessment');
+        
+        // Initialize quiz
+        function initQuiz() {
+            updateQuestion();
+            updateProgress();
+            
+            // Option selection
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from all options
+                    options.forEach(opt => opt.classList.remove('selected'));
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                    
+                    // Store answer
+                    answers[currentQuestion] = parseInt(this.getAttribute('data-value'));
+                    
+                    // Enable next button
+                    nextBtn.disabled = false;
+                });
+            });
+            
+            // Next button
+            nextBtn.addEventListener('click', function() {
+                if (currentQuestion < questions.length - 1) {
+                    currentQuestion++;
+                    updateQuestion();
+                    updateProgress();
+                    nextBtn.disabled = true;
+                    
+                    if (currentQuestion === questions.length - 1) {
+                        nextBtn.textContent = 'Lihat Hasil';
+                    }
+                } else {
+                    // Show results
+                    showResults();
+                }
+            });
+            
+            // Previous button
+            prevBtn.addEventListener('click', function() {
+                if (currentQuestion > 0) {
+                    currentQuestion--;
+                    updateQuestion();
+                    updateProgress();
+                    nextBtn.disabled = false;
+                    nextBtn.textContent = 'Selanjutnya';
+                }
+            });
+            
+            // Start assessment from hero button
+            startAssessmentBtn.addEventListener('click', function() {
+                document.getElementById('assessment').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+        
+        function updateQuestion() {
+            questionElement.textContent = questions[currentQuestion];
+            
+            // Clear selection
+            options.forEach(opt => opt.classList.remove('selected'));
+            
+            // Restore previous answer if exists
+            if (answers[currentQuestion]) {
+                options.forEach(opt => {
+                    if (parseInt(opt.getAttribute('data-value')) === answers[currentQuestion]) {
+                        opt.classList.add('selected');
+                        nextBtn.disabled = false;
+                    }
+                });
+            } else {
+                nextBtn.disabled = true;
+            }
+            
+            // Show/hide previous button
+            prevBtn.style.display = currentQuestion === 0 ? 'none' : 'inline-block';
+        }
+        
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            progressFill.style.width = `${progress}%`;
+            progressCount.textContent = currentQuestion + 1;
+        }
+        
+        function showResults() {
+            const total = answers.reduce((sum, val) => sum + val, 0);
+            let message = "";
+            let color = "";
+            
+            if (total <= 7) {
+                message = "Kamu dalam kondisi baik! Tingkat burnout rendah. Pertahankan keseimbangan hidup dan kerja yang sudah kamu miliki.";
+                color = "var(--pastel-green)";
+            } else if (total <= 12) {
+                message = "Kamu mulai menunjukkan tanda-tanda kelelahan. Saatnya lebih memperhatikan diri, ambil jeda sejenak, dan evaluasi prioritas.";
+                color = "var(--pastel-yellow)";
+            } else {
+                message = "Kamu mengalami gejala burnout yang signifikan. Sangat disarankan untuk mencari bantuan profesional dan mengambil waktu untuk pemulihan serius.";
+                color = "var(--soft-peach)";
+            }
+            
+            questionElement.innerHTML = `
+                <div style="text-align: center; padding: 20px;">
+                    <h3 style="color: ${color}; margin-bottom: 15px;">Hasil Assessment Burnout</h3>
+                    <p style="font-size: 18px; margin-bottom: 15px;">${message}</p>
+                    <p style="font-size: 16px; color: var(--text-light);">Skor kamu: ${total}/20</p>
+                    <button class="cta-button" style="margin-top: 20px;" id="getHelp">Dapatkan Bantuan Personal</button>
+                </div>
+            `;
+            
+            // Hide options and buttons
+            document.querySelector('.options').style.display = 'none';
+            nextBtn.style.display = 'none';
+            prevBtn.style.display = 'none';
+            
+            // Add event listener to help button
+            document.getElementById('getHelp').addEventListener('click', function() {
+                alert("Fitur konseling akan segera tersedia! Untuk sekarang, coba latihan pernapasan di bawah ini.");
+                document.getElementById('breathing').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+        
+        // Mascot Animation
+        function createSparkAnimation() {
+            const sparks = ['spark1', 'spark2', 'spark3'];
+            
+            sparks.forEach((sparkId, index) => {
+                const spark = document.getElementById(sparkId);
+                
+                // Random position
+                const x = Math.random() * 250;
+                const y = Math.random() * 250;
+                
+                spark.style.left = `${x}px`;
+                spark.style.top = `${y}px`;
+                
+                // Animate
+                spark.animate([
+                    { opacity: 0, transform: 'scale(0)' },
+                    { opacity: 1, transform: 'scale(1)' },
+                    { opacity: 0, transform: 'scale(0)' }
+                ], {
+                    duration: 2000 + Math.random() * 2000,
+                    delay: index * 1000,
+                    iterations: Infinity
+                });
+            });
+        }
+        
+        // Breathing Exercise
+        const breathCircle = document.querySelector('.breathing-circle');
+        const breathText = document.getElementById('breath-text');
+        const breathToggle = document.getElementById('breathToggle');
+        let isBreathing = false;
+        let breathAnimation;
+        
+        breathToggle.addEventListener('click', function() {
+            if (!isBreathing) {
+                // Start breathing animation
+                breathCircle.style.animation = 'breathe 8s infinite ease-in-out';
+                
+                // Change text
+                let breathCycle = 0;
+                breathAnimation = setInterval(() => {
+                    breathCycle++;
+                    breathText.textContent = breathCycle % 2 === 1 ? 'Tarik Napas' : 'Buang Napas';
+                }, 4000);
+                
+                breathToggle.textContent = 'Pause';
+                isBreathing = true;
+            } else {
+                // Pause breathing animation
+                breathCircle.style.animation = 'none';
+                clearInterval(breathAnimation);
+                breathToggle.textContent = 'Mulai';
+                isBreathing = false;
+            }
+        });
+        
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initQuiz();
+            createSparkAnimation();
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a, .footer-links a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // CTA Button action
+            document.querySelector('header .cta-button').addEventListener('click', function() {
+                document.getElementById('assessment').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
